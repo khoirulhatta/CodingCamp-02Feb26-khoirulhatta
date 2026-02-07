@@ -7,20 +7,55 @@
     <title>Todo List - Hatta</title>
 
     <!-- Link to external CSS file -->
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="CSS/style.css">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 
 <body>
     <!-- Header Content -->
     <header>
-        <h1>Welcome to the Sample Page</h1>
+        <h1 class="text-3xl font-bold pb-4">Todo List - Hatta</h1>
     </header>
 
     <!-- Main Content -->
-    <main></main>
+    <main>
+        <section>
+            <form>
+                <!-- Todo Input -->
+                <input class="border border-black-300 rounded px-4 py-2 mb-2" type="text" id="todo-input" placeholder="Enter a new todo item">
 
-    <!-- Footer Content -->
-    <footer></footer>
+                <!-- Date Input -->
+                <input class="border border-black-300 rounded px-4 py-2 mb-2" type="date" id="todo-date" placeholder="Enter due date">
+            </form>
+
+        </section>
+
+        <section class="flex pt-2 justify-between space-x-4">
+            <!-- Add Todo Button -->
+            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded" id="add-todo-btn" onclick="addTodo()" type="button">Add Todo</button>
+
+            <!-- Clear All -->
+            <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-6 rounded" id="clear-all-btn" onclick="deleteAllTodos()">Clear All</button>
+            <!-- Filter -->
+            <button class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-5 rounded" id="filter-btn" onclick="filterTodos()">Filter Todo</button>
+        </section>
+
+        <section>
+            <!-- Todo List Display -->
+            <h1 class="text-1xl font-bold pt-4">Your Todo Items:</h1>
+            <ul id="todo-list" class="list-disc pl-5 pt-2">
+                <li>No todo items yet.</li>
+            </ul>
+        </section>
+
+    <!-- Link to external JavaScript file -->
+    <script src="js/script.js"></script> 
 </body>
+
+<footer>
+    <p class="text-center text-gray-500 text-sm mt-4">© 2026 Todo List App by Hatta</p>
+</footer> 
 
 </html> 
